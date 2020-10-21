@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "declaration": false,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "module": "CommonJS",
+        "target": "ES5",
+        "alwaysStrict": true,
+        "importHelpers": true,
+        "incremental": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": "./",
+        "noEmit": false,
+        "lib": ["ES2015", "ES2015.Iterable", "ES2016", "ES2017", "DOM"],
+    },
+    "exclude": ["node_modules", "dist", ".*"]
+}
