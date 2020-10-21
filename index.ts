@@ -1,1 +1,1 @@
-export * as Merge from './lib/merge'
+export { merge, mergeWith } from './lib/merge'

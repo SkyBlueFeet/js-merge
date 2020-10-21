@@ -6,7 +6,7 @@
  * @Gitee: https://gitee.com/skybluefeet
  * @Github: https://github.com/SkyBlueFeet
  */
-import { mergeWith } from '../lib/merge'
+import { merge, mergeWith } from '../lib/merge'
 
 const test1 = {
   test: 5,
@@ -42,11 +42,7 @@ const test2 = {
   }
 }
 
-// console.log(merge(Object.create(null), test1, test2))
-console.log(
-  mergeWith(Object.create(null), [test1, test2], (obj, src) => {
-    console.log(obj, src)
-    return src
-  })
-)
+console.log(merge(Object.create(null), test1, test2))
+console.log(merge({}, { a: 123, n: 789 }, { ui: 456, a: 852 }))
+console.log(mergeWith({}, [{ a: 123, n: 789 }, { ui: 456 }]))
 // console.log(test1)

@@ -46,5 +46,6 @@
         "sass": "sass --style expanded",
         "scss": "scss --style expanded",
         "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css"
-    }
+    },
+    "typescript.tsdk": "/home/skyblue/Desktop/js-merge/node_modules/typescript/lib"
 }
