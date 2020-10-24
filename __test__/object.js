@@ -65,3 +65,5 @@ const test2 = {
 }
 
 console.log(tss(test1, test2))
+
+console.log(...undefined)
