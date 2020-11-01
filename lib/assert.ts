@@ -27,3 +27,23 @@ export const isBoolean = (val: unknown): val is boolean =>
 export const isString = (val: unknown): val is string => typeof val === 'string'
 
 export const isSymbol = (val: unknown): val is symbol => typeof val === 'symbol'
+
+// export function isPlainObject(
+//   val: unknown
+// ): val is Record<string | symbol | number, any> {
+//   const class2type = {}
+//   const toString = class2type.toString
+//   const hasOwn = class2type.hasOwnProperty
+
+//   if (!val || toString.call(val) === '[object Object]') return false
+
+//   const proto = Object.getPrototypeOf(val)
+
+//   if (!proto) return true
+
+//   const Ctor = hasOwn.call(proto, 'constructor') && proto.constructor
+//   return (
+//     typeof Ctor === 'function' &&
+//     hasOwn.toString.call(Ctor) === hasOwn.toString.call(Object)
+//   )
+// }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
  * @author: SkyBlue
  * @LastEditors: SkyBlue
@@ -54,7 +55,7 @@ try {
 
   const t = mergeWith({}, { a: 8 }, { b: 9 }, (obj) => obj)
   const args = [{}, test1, test2, { a: 8 }, { u: 9 }, (obj, src) => src]
-  console.log('58', mergeWith(...args))
+  console.log('58', mergeWith({}, ...args))
   console.log(merge({}))
 } catch (error) {
   console.log(error)

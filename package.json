@@ -34,7 +34,8 @@
         "ts-node": "^9.0.0"
     },
     "scripts": {
-        "test": "ts-node --project tsconfig.test.json __test__/_merge.ts",
+        "test.merge": "ts-node --project tsconfig.test.json __test__/_merge.ts",
+        "test.extend": "ts-node --project tsconfig.test.json __test__/_extend.ts",
         "build": "rollup -c rollup.config.js"
     },
     "repository": {
