@@ -10,5 +10,3 @@ export const objectIterator = (
   obj: Record<string | symbol, unknown>,
   callback: (key: string, val: unknown) => void
 ) => Object.entries(obj).map((vals) => callback(vals[0], vals[1]))
-
-objectIterator({ ui: 'test' }, console.log)

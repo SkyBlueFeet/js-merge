@@ -13,6 +13,21 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
+    "overrides": [
+    {
+        "files": [
+            "*.ts",
+            "*.tsx",
+            "*.d.ts"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/eslint-recommended",
+            "plugin:@typescript-eslint/recommended",
+            "plugin:vue/essential",
+            "plugin:prettier/recommended"
+        ]
+    }],
     "plugins": [
         "@typescript-eslint"
     ],

@@ -1,3 +1,4 @@
+import { clone } from '../lib/clone'
 import { extend } from '../lib/extend'
 import { merge } from '../lib/merge'
 
@@ -41,3 +42,5 @@ console.log(
     test: tart
   })
 )
+
+console.log(clone(() => 123))

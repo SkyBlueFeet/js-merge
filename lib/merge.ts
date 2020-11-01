@@ -8,7 +8,7 @@
  * @Github: https://github.com/SkyBlueFeet
  */
 
-import { isArray, isFunction, isPlainObject } from './assert'
+import { isArray, isFunction, isPlainObject, isUndefined } from './assert'
 import { objectIterator } from './public'
 
 type Plain = Record<string | symbol | number, any>
@@ -19,17 +19,19 @@ type Customize = (objValue: unknown, src: unknown) => unknown
 
 function basicMerge(target: Plain, source: Plain, customize: Customize) {
   objectIterator(source, (key: string, val: unknown) => {
-    if (target === source[key]) return
+    if (target === val) return
 
     if (typeof customize === 'function') {
       target[key] = customize(target[key], val)
       return
     }
 
-    if (isPlainObject(val) || isArray(val)) {
-      if (!target[key]) target[key] = isArray(val) ? [] : {}
+    if (isPlainObject(val)) {
+      if (!target[key]) target[key] = {}
       basicMerge(target[key], val, customize)
-    } else {
+    } else if (isArray(val) && isArray(target[key])) {
+      target[key] = [...val, ...target[key]]
+    } else if (!isUndefined(val)) {
       target[key] = val
     }
   })
