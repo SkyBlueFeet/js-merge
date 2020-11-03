@@ -1,5 +1,5 @@
 {
-    "name": "js-merge",
+    "name": "js-extend",
     "version": "1.0.0",
     "description": "javascript deepmerge\\assign\\clone\\extend",
     "main": "dist/index.js",
@@ -36,6 +36,7 @@
     "scripts": {
         "test.merge": "ts-node --project tsconfig.test.json __test__/_merge.ts",
         "test.extend": "ts-node --project tsconfig.test.json __test__/_extend.ts",
+        "test.minixs": "ts-node --project tsconfig.test.json __test__/_minixs.ts",
         "build": "rollup -c rollup.config.js"
     },
     "repository": {

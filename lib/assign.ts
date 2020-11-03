@@ -64,7 +64,15 @@ export interface Assign {
   <T, S extends Plain>(target: T, ...sources: S[]): T & S & Plain
   <T extends Plain>(...targets: T[]): T & Plain
 }
+/**
+ * @description 将Source的值分配给Target，此操作为浅拷贝
+ * @param {Object} Target 被分配的目标对象，该对象将会被修改
+ * @param {...Object[]} Sources 被分配的源对象
+ * @example
+ * const target={};
 
+ * assign(target,{a:5},{b:9}) //target={a:'5',b:'9'}
+ */
 export const assign: Assign = function (target: Plain, ...sources: Plain[]) {
   for (const source of sources) {
     basicAssign(target, source, undefined)
@@ -123,6 +131,21 @@ interface AssignWith {
   (...args: any[]): Plain
 }
 
+/**
+ * @description 将Source的值分配给Target，并支持自定义数值处理器，此操作为浅拷贝
+ * @param {Object} Target 被分配的目标对象，该对象将会被修改
+ * @param {...Object[]} Sources 被分配的源对象
+ * @param {Customize} customize 自定义函数，定义在最后一个参数
+ * @example
+ * const target={};
+ * function customize(obj,src){
+ *  if(typeof src==='number'){
+ *    return src.toString();
+ *  }
+ * return src
+ * }
+ * assignWith(target,{a:5},{b:9}) //target={a:'5',b:'9'}
+ */
 export const assignWith: AssignWith = function (...args: any[]) {
   const target = args.shift()
   const customize = args.pop()

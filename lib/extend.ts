@@ -58,6 +58,11 @@ interface Extend {
     Record<string | symbol | number, any>
 }
 
+/**
+ * @description 实现了Assign的同时，会遍历并继承来源对象的属性
+ * @param { object|Function } target
+ * @param {...object|Function} sources
+ */
 export const extend: Extend = function (target: any, ...sources: any[]) {
   if (sources.length === 0) return target
 
